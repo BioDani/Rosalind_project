@@ -1,7 +1,19 @@
 # Rosalind Bioinformatics Project
 
+This repository is dedicated to my journey into the exciting world of bioinformatics. Here, I'll solve problems from [Rosalind](https://rosalind.info/), a platform offering algorithmic challenges in bioinformatics.
 
 https://stackedit.io/app#
+
+# Getting started
+
+1. Clone this repository:
+
+>git clone https://github.com/BioDani/Rosalind_project.git
+
+2. Navigate to the directory:
+
+>cd Rosalind_project
+
 
 
 ## Subtitulo
