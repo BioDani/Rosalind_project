@@ -1,12 +1,3 @@
-'''
-Given:
-A DNA string s of length at most 1000 nt.
-
-Return:
-Four integers (separated by spaces) counting the respective number
-of times that the symbols 'A', 'C', 'G', and 'T' occur in s.
-'''
-
 class DNASequence:
     """Represents a DNA sequence."""
 
@@ -69,6 +60,23 @@ class DNASequence:
              / self.calculate_length()
         except ZeroDivisionError:
             return f"The sequence's length is zero."
+    
+    def trancribe_dna_rna(self) -> str:
+        """Given a DNA string, returns the trascribed RNA string"""
+        return self.sequence.replace("T","U")
+    
+    def reverse_complement(self) -> str:
+        complementary = {"A": "T",
+                         "C": "G",
+                         "G": "C",
+                         "T": "A"}
+        
+        complementary_list = [complementary[i] for i in self.sequence]
+        reverse_complementary_list = complementary_list[::-1]
+        return "".join(reverse_complementary_list)
+         
+
+
         
     def __str__(self) -> str:
         """Returns the DNA sequence string."""
