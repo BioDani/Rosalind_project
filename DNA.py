@@ -66,17 +66,15 @@ class DNASequence:
         return self.sequence.replace("T","U")
     
     def reverse_complement(self) -> str:
-        complementary = {"A": "T",
-                         "C": "G",
-                         "G": "C",
-                         "T": "A"}
+        """
+        Returns:
+           The reverse complement string
+        """
+        complementary = {"A": "T", "C": "G", "G": "C", "T": "A"}
         
         complementary_list = [complementary[i] for i in self.sequence]
         reverse_complementary_list = complementary_list[::-1]
         return "".join(reverse_complementary_list)
-         
-
-
         
     def __str__(self) -> str:
         """Returns the DNA sequence string."""
