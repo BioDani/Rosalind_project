@@ -56,7 +56,7 @@ class DNASequence:
             The GC content as a float percentage (0.0 to 1.0).
         """
         try:
-             return (self.count_C_nucleotide() + self.count_G_nucleotide()) \
+             return (self.sequence.count("C") + self.sequence.count("G")) \
              / self.calculate_length()
         except ZeroDivisionError:
             return f"The sequence's length is zero."
