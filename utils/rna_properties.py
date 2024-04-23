@@ -1,13 +1,15 @@
-def traslate_mrna_protein(sequence: str) -> str:
+def traslate_mrna_protein(sequence: str) -> list:
     """
     The translation of an RNA molecule called
     messenger RNA (mRNA) into amino acids for 
     protein creation.
+    
     Args:
         sequence: mRNA string
 
     Returns:
-        Protein string 
+        Proteins: list[str] List of diferent peptides inside
+        (sep= Stop codon) a mRNA  
     """
     
     rna_codon_table={
@@ -19,11 +21,11 @@ def traslate_mrna_protein(sequence: str) -> str:
         "CCU": "P", "CCC": "P", "CCA": "P", "CCG": "P",   # Proline (P)
         "ACU": "T", "ACC": "T", "ACA": "T", "ACG": "T",   # Threonine (T)
         "GCU": "A", "GCC": "A", "GCA": "A", "GCG": "A",   # Alanine (A)
-        "UAU": "Y", "UAC": "Y", "UAA": "Stop", "UAG": "Stop", # Tyrosine (Y), Stop codons
+        "UAU": "Y", "UAC": "Y", "UAA": "-", "UAG": "-", # Tyrosine (Y), Stop codons
         "CAU": "H", "CAC": "H", "CAA": "Q", "CAG": "Q",   # Histidine (H), Glutamine (Q)
         "AAU": "N", "AAC": "N", "AAA": "K", "AAG": "K",   # Asparagine (N), Lysine (K)
         "GAU": "D", "GAC": "D", "GAA": "E", "GAG": "E",   # Aspartic acid (D), Glutamic acid (E)
-        "UGU": "C", "UGC": "C", "UGA": "Stop", "UGG": "W", # Cysteine (C), Tryptophan (W), Stop codon
+        "UGU": "C", "UGC": "C", "UGA": "-", "UGG": "W", # Cysteine (C), Tryptophan (W), Stop codon
         "CGU": "R", "CGC": "R", "CGA": "R", "CGG": "R",   # Arginine (R)
         "AGU": "S", "AGC": "S", "AGA": "R", "AGG": "R",   # Serine (S), Arginine (R)
         "GGU": "G", "GGC": "G", "GGA": "G", "GGG": "G",   # Glycine (G)
@@ -33,5 +35,7 @@ def traslate_mrna_protein(sequence: str) -> str:
     
     for i in range(0,len(sequence),3):
         protein += rna_codon_table[sequence[i:i+3]]
+    proteins = protein.split("-")
+    proteins = proteins[0:-2]
     
-    return protein
+    return proteins
