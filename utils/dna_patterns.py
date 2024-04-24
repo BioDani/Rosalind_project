@@ -15,3 +15,5 @@ def find_motif(sequence: str, motif: str) -> list:
     positions = [ match.start() for match in re.finditer(sequence, motif) ]
 
     return positions
+
+    
