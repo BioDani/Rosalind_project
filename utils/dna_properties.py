@@ -52,7 +52,7 @@ def calculate_gc_content(base_seq: str) -> float:
     return  (sequence.count("C") + sequence.count("G") ) \
         / calculate_length(sequence)
 
-def validate_sequence( base_seq: str, RNAflag = False) -> bool:
+def validate_sequence( base_seq: str, RNAflag: bool = False) -> bool:
     """
     Return  True is the string contains only A, C, G and 
     T( or U, if RNAflag) characters, otherwise False
@@ -69,4 +69,5 @@ def validate_sequence( base_seq: str, RNAflag = False) -> bool:
     
     return len(sequence) == sequence.count("A") + sequence.count("C") \
         + sequence.count("G") + sequence.count("U" if RNAflag else "T")
+    
     
