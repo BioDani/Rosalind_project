@@ -14,7 +14,17 @@ https://stackedit.io/app#
 
 >cd Rosalind_project
 
+3. Create an virtual enviroment using conda
 
+> conda create -n rosalind_env python=3.9
+
+4. Export env to requirements.txt file
+
+> conda env export > requirements.txt
+
+5. Pull changes from a remote repository. Select origin brach and then destiny branch
+
+> git pull rama_origen rama_destino
 
 ## Subtitulo
 
