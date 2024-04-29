@@ -1,5 +1,5 @@
 import sys
-sys.path.append('')
+sys.path.append('C:\Users\dtejada\Documents\Rosalind_project\utils')
 
 from utils.dna_properties import calculate_gc_content
 from utils.fasta_format import read_fasta
