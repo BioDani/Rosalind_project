@@ -9,7 +9,7 @@ def read_fasta( file : str) -> dict:
       dictionary with the id and sequence of each one sequence in the file 
   """
   sequences = dict()
-  with open( './sample.fasta', 'r' ) as fasta:
+  with open( file , 'r' ) as fasta:
     name_seq = None
     sequence = str()
     

@@ -1,8 +1,12 @@
+import sys
+sys.path.append('')
+
 from utils.dna_properties import calculate_gc_content
 from utils.fasta_format import read_fasta
 
+
 def main():
-  sequences = read_fasta('sample.fasta')
+  sequences = read_fasta('data/sample.fasta')
   for id, seq in sequences.items():
     sequences[id] = calculate_gc_content(seq)*100
   
